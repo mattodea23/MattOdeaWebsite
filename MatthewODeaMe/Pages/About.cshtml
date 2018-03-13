@@ -1,0 +1,30 @@
+﻿@page
+@model AboutModel
+@{
+    ViewData["Title"] = "About Me";
+}
+<div class="clearfix">
+    <div class="row">
+        <h1 class="text-center">@ViewData["Title"]</h1>
+    </div>
+    <div class="center-block">
+        <div class="row">
+            <h2 class="text-center">Awards & Qualifications</h2>
+            <ul class="big-padding list-unstyled">
+                @for (int index = 0; index < Model.AwardAndQual.Length; index++)
+            {
+                    <li><strong>@Model.AwardAndQual[index].Year</strong> - @Model.AwardAndQual[index].AwardOrQual</li>
+                }
+            </ul>
+        </div>
+        <div class="row">
+            <h2 class="text-center">Skills and Abilities</h2>
+            <ul class="center-block big-padding">
+                @foreach (var item in Model.SkillsAndAbil)
+            {
+                    <li>@item</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
